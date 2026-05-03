@@ -1,0 +1,412 @@
+/* =========================================
+   VARS DE COLORES Y TIPOGRAFIAS
+========================================= */
+:root {
+    --bg-dark: #0f0a17;
+    --eva-purple: #5A228B;
+    --eva-green: #76FF03;
+    --eva-orange: #FF8C00;
+    --text-main: #E0E0E0;
+    --font-heading: 'Orbitron', 'Share Tech Mono', sans-serif;
+    --font-copy: 'Rajdhani', 'Share Tech Mono', sans-serif;
+}
+
+/* =========================================
+   RESETEO Y ESTILOS BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-copy);
+    line-height: 1.65;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+/* =========================================
+   HEADER Y LOGOTIPO ORIGINAL
+========================================= */
+.site-header {
+    background-color: #000000;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--eva-green);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logo-eva { color: var(--eva-purple); text-shadow: 0 0 5px var(--eva-purple); }
+.logo-num { color: var(--eva-green); }
+.logo-text { 
+    color: var(--text-main); 
+    font-size: 1rem; 
+    margin-left: 0.5rem;
+    letter-spacing: 4px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--eva-green);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--eva-orange);
+    margin: 0.5rem auto 0;
+}
+
+/* =========================================
+   BANNER
+========================================= */
+.banner {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(15, 10, 23, 0.85), rgba(15, 10, 23, 0.65)),
+                url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd471d47-d274-4d25-b004-a74d729deff8/d94a2y9-7dc1f54a-328c-4cea-845f-77f6fc7b5f80.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZDQ3MWQ0Ny1kMjc0LTRkMjUtYjAwNC1hNzRkNzI5ZGVmZjgvZDk0YTJ5OS03ZGMxZjU0YS0zMjhjLTRjZWEtODQ1Zi03N2Y2ZmM3YjVmODAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yW44ECd5IaAJ_VO1rJOHP-mQsppKcHdPylbmyOvEv20') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--eva-orange);
+}
+
+.banner-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--eva-green);
+    text-shadow: 0 0 10px rgba(118, 255, 3, 0.5);
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   INFO
+========================================= */
+.services {
+    padding: 4rem 1.5rem;
+    background-color: #140d1f;
+    background-image:
+        radial-gradient(circle at top left, rgba(118,255,3,0.08) 0, transparent 22%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04) 1px, transparent 1px, transparent 8px);
+    background-blend-mode: soft-light, normal;
+}
+
+.pills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .pills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.pill {
+    background: rgba(90, 34, 139, 0.08);
+    border: 1px solid rgba(90, 34, 139, 0.85);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pill:hover {
+    border-color: var(--eva-green);
+    box-shadow: 0 0 15px rgba(118, 255, 3, 0.2);
+    transform: translateY(-5px);
+}
+
+.pill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    color: var(--eva-green);
+}
+
+.pill-icon svg {
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+.pill h3 {
+    color: var(--eva-orange);
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   QUIENES SOMOS
+========================================= */
+.about {
+    padding: 4rem 1.5rem;
+    background-color: #120815;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03) 0, transparent 18%),
+        linear-gradient(90deg, transparent 49%, rgba(90,34,139,0.08) 50%, transparent 51%);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 900px) {
+    .about-container {
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: center;
+    }
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--eva-purple);
+    box-shadow: -10px 10px 0 rgba(118, 255, 3, 0.22);
+}
+
+.about-text {
+    max-width: 780px;
+}
+
+.about-text p {
+    margin-bottom: 1.35rem;
+    font-size: 1.08rem;
+    text-align: justify;
+    color: #d3d3de;
+}
+
+.about-text p + p {
+    padding-left: 0.8rem;
+    border-left: 2px solid rgba(118, 255, 3, 0.7);
+}
+
+/* =========================================
+   RESEÑAS
+========================================= */
+.testimonials {
+    padding: 4rem 1.5rem;
+    background-color: #0b0711;
+    border-top: 2px solid var(--eva-purple);
+    background-image:
+        radial-gradient(circle at 80% 10%, rgba(118,255,3,0.05) 0, transparent 20%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 6px);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-left: 4px solid var(--eva-green);
+    border-radius: 0 8px 8px 0;
+    text-align: center;
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--eva-orange);
+}
+
+.comment {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.client-name {
+    font-weight: 700;
+    color: var(--eva-green);
+    font-family: var(--font-heading);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.site-footer {
+    background-color: #000;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--eva-purple);
+}
+
+.footer-data p {
+    margin-bottom: 0.5rem;
+    color: #999;
+}
+
+.footer-data strong {
+    color: var(--eva-purple);
+}
+
+.social-bar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    background: rgba(118,255,3,0.18);
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1) grayscale(100%) brightness(1.3);
+    transition: filter 0.3s ease;
+}
+
+.social-icon:hover img {
+    filter: invert(1) brightness(1.4) drop-shadow(0 0 5px var(--eva-green));
+}
+
+.social-icon:hover img {
+    filter: drop-shadow(0 0 5px var(--eva-green));
+}
+
+/* =========================================
+   BREAKPOINTS
+========================================= */
+
+/* Breakpoint 1: Disp Medios*/
+@media screen and (min-width: 768px) {
+    .banner-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .pills-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .pill {
+        flex: 1 1 calc(50% - 2rem);
+    }
+
+    .testimonials-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .testimonial-card {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+/* Breakpoint 2: Disp Grandes*/
+@media screen and (min-width: 1024px) {
+    .banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .pills-grid {
+        flex-wrap: nowrap;
+    }
+    
+    .pill {
+        flex: 1 1 25%;
+    }
+
+    .about-container {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 4rem;
+    }
+
+    .about-image {
+        flex: 1 1 40%;
+        position: sticky;
+        top: 2rem;
+    }
+
+    .about-text {
+        flex: 1 1 60%;
+    }
+
+    .testimonials-grid {
+        flex-wrap: nowrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        flex: 1 1 33.33%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .footer-data {
+        text-align: left;
+    }
+}
