@@ -34,11 +34,11 @@ body {
 }
 
 /* =========================================
-   HEADER Y LOGOTIPO ORIGINAL
+   HEADER Y LOGO
 ========================================= */
 .site-header {
     background-color: #000000;
-    padding: 1rem 2rem;
+    padding: 1rem;
     text-align: center;
     border-bottom: 2px solid var(--eva-green);
 }
@@ -87,33 +87,38 @@ body {
     background: linear-gradient(rgba(15, 10, 23, 0.85), rgba(15, 10, 23, 0.65)),
                 url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd471d47-d274-4d25-b004-a74d729deff8/d94a2y9-7dc1f54a-328c-4cea-845f-77f6fc7b5f80.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jZDQ3MWQ0Ny1kMjc0LTRkMjUtYjAwNC1hNzRkNzI5ZGVmZjgvZDk0YTJ5OS03ZGMxZjU0YS0zMjhjLTRjZWEtODQ1Zi03N2Y2ZmM3YjVmODAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yW44ECd5IaAJ_VO1rJOHP-mQsppKcHdPylbmyOvEv20') center/cover no-repeat;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 1rem;
     border-bottom: 1px solid var(--eva-orange);
 }
 
+.banner-content {
+    width: min(100%, 92vw);
+}
+
 .banner-content h1 {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: clamp(1.4rem, 8vw, 3rem); 
+    overflow-wrap: break-word; 
     color: var(--eva-green);
     text-shadow: 0 0 10px rgba(118, 255, 3, 0.5);
     margin-bottom: 1rem;
 }
 
 .banner-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.2rem);
     font-weight: 500;
     color: #FFF;
     letter-spacing: 1px;
 }
 
 /* =========================================
-   INFO
+   PASTILLAS DE INFORMACIÓN
 ========================================= */
 .services {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
     background-color: #140d1f;
     background-image:
         radial-gradient(circle at top left, rgba(118,255,3,0.08) 0, transparent 22%),
@@ -122,15 +127,9 @@ body {
 }
 
 .pills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .pills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 .pill {
@@ -150,8 +149,8 @@ body {
 
 .pill-icon {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 3rem;
     height: 3rem;
     margin: 0 auto 1rem;
@@ -171,10 +170,10 @@ body {
 }
 
 /* =========================================
-   QUIENES SOMOS
+   QUIÉNES SOMOS
 ========================================= */
 .about {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
     background-color: #120815;
     background-image:
         radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03) 0, transparent 18%),
@@ -182,16 +181,9 @@ body {
 }
 
 .about-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-}
-
-@media (min-width: 900px) {
-    .about-container {
-        grid-template-columns: 0.95fr 1.05fr;
-        align-items: center;
-    }
 }
 
 .about-image img {
@@ -203,7 +195,7 @@ body {
 }
 
 .about-text {
-    max-width: 780px;
+    max-width: 100%;
 }
 
 .about-text p {
@@ -222,7 +214,7 @@ body {
    RESEÑAS
 ========================================= */
 .testimonials {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
     background-color: #0b0711;
     border-top: 2px solid var(--eva-purple);
     background-image:
@@ -233,7 +225,7 @@ body {
 .testimonials-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .testimonial-card {
@@ -270,9 +262,12 @@ body {
 ========================================= */
 .site-footer {
     background-color: #000;
-    padding: 3rem 1.5rem;
-    text-align: center;
+    padding: 3rem 1rem;
     border-top: 1px solid var(--eva-purple);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
 }
 
 .footer-data p {
@@ -285,7 +280,6 @@ body {
 }
 
 .social-bar {
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -293,18 +287,13 @@ body {
 
 .social-icon {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
     background: rgba(255,255,255,0.06);
     border-radius: 50%;
     transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: translateY(-2px);
-    background: rgba(118,255,3,0.18);
 }
 
 .social-icon img {
@@ -314,72 +303,56 @@ body {
     transition: filter 0.3s ease;
 }
 
-.social-icon:hover img {
-    filter: invert(1) brightness(1.4) drop-shadow(0 0 5px var(--eva-green));
+.social-icon:hover {
+    transform: translateY(-2px);
+    background: rgba(118,255,3,0.18);
 }
 
 .social-icon:hover img {
-    filter: drop-shadow(0 0 5px var(--eva-green));
+    filter: invert(1) brightness(1.4) drop-shadow(0 0 5px var(--eva-green));
 }
 
 /* =========================================
    BREAKPOINTS
 ========================================= */
 
-/* Breakpoint 1: Disp Medios*/
+/* Breakpoint 1: Tablet (768px) */
 @media screen and (min-width: 768px) {
-    .banner-content h1 {
-        font-size: 3.5rem;
-    }
-
-    .pills-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .pill {
-        flex: 1 1 calc(50% - 2rem);
-    }
-
+    .pills-grid,
     .testimonials-grid {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
     }
 
+    .pill,
     .testimonial-card {
-        flex: 1 1 calc(50% - 2rem);
+        flex: 1 1 calc(50% - 1.5rem);
     }
 }
 
-/* Breakpoint 2: Disp Grandes*/
+/* Breakpoint 2: Desktop (1024px) */
 @media screen and (min-width: 1024px) {
     .banner-content {
         max-width: 1200px;
-        margin: 0 auto;
     }
 
     .pills-grid {
         flex-wrap: nowrap;
     }
-    
+
     .pill {
         flex: 1 1 25%;
     }
 
     .about-container {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 4rem;
     }
 
     .about-image {
-        flex: 1 1 40%;
-        position: sticky;
-        top: 2rem;
+        flex: 0 0 40%;
     }
 
     .about-text {
@@ -395,18 +368,18 @@ body {
     .testimonial-card {
         flex: 1 1 33.33%;
         text-align: left;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .site-footer {
-        display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-    }
-    
-    .footer-data {
         text-align: left;
+        padding-left: max(1rem, calc((100% - 1200px) / 2));
+        padding-right: max(1rem, calc((100% - 1200px) / 2));
+    }
+
+    .social-bar {
+        justify-content: flex-end;
     }
 }
